@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+EMIAS addon
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <br><h1>Данные пациента</h1><br>
+    <form method="post">
+        <label for="surname">Фамилия:</label>
+        <input type="text" name="surname" id="surname" class="form-control" placeholder="Введите фамилию пациента"><br>
+        <label for="name">Имя:</label>
+        <input type="text" name="name" id="name" class="form-control" placeholder="Введите имя пациента"><br>
+        <label for="patron">Отчество:</label>
+        <input type="text" name="patron" id="patron" class="form-control" placeholder="Введите отчество пациента"><br>
+        <label for="birth">Дата рождения:</label>
+        <input type="date" name="birth" id="birth" class="form-control" placeholder="Укажиет дату рождения "><br>
+        <label for="vmeda_id">ВМедА_ID:</label>
+        <input type="text" name="vmeda_id" id="vmeda_id" class="form-control" placeholder="Поле для ВМедА_ID"><br>
+        <input type="submit" class="btn-success" value="Проверить пациента"><br>
+    </form>
+    {% if surname %}
+    <div class="blockquote-foote">
+        <form method="post">
+            <ul>
+                <li><input type="radio" id="choice1" name="choice" value="Value 1">
+                    <label for="choice1">{{ surname }}</label></li>
+                <li><input type="radio" id="choice2" name="choice" value="Value 2">
+                    <label for="choice2">{{ name }}</label></li>
+                <li><input type="radio" id="choice3" name="choice" value="Value 3">
+                    <label for="choice3">{{ patron }}</label></li>
+            </ul>
+        </form>
+    </div>
+<!--     {% else %} -->
+<!--        <p>Тут что -то будет</p>  -->
+    {% endif %}
+
+</div>
+
+{% endblock %}
