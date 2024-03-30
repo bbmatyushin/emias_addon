@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+EMIAS - login
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    {% for msg in get_flashed_messages() %}
+        <div class="btn-warning-msg">{{ msg }}</div>
+    {% endfor %}
+    <br><h2>Авторизация пользователя</h2>
+    <form action="login" method="post">
+        <label for="username">Имя пользователя:</label>
+        <input type="text" name="username" id="username" class="form-check-inline" placeholder=" Логин"><br>
+        <label for="password">Имя:</label>
+        <input type="text" name="password" id="password" class="form-check-inline" placeholder=" Пароль"><br>
+        <br><input type="submit" class="btn-outline-info" value=" Войти "><br>
+    </form>
+</div>
+{% endblock %}

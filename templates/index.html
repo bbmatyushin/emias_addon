@@ -7,7 +7,7 @@ EMIAS addon
 {% block body %}
 <div class="container">
     <br><h1>Данные пациента</h1><br>
-    <form method="post">
+    <form action="index" method="post">
         <label for="surname">Фамилия:</label>
         <input type="text" name="surname" id="surname" class="form-control" placeholder="Введите фамилию пациента"><br>
         <label for="name">Имя:</label>
@@ -33,8 +33,6 @@ EMIAS addon
             </ul>
         </form>
     </div>
-<!--     {% else %} -->
-<!--        <p>Тут что -то будет</p>  -->
     {% endif %}
 
 </div>
