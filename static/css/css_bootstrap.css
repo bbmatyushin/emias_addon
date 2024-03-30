@@ -2926,6 +2926,13 @@ a.btn.disabled,fieldset:disabled a.btn {
     box-shadow: 0 0 0 0.2rem rgba(168,110,197,0.5)
 }
 
+.btn-warning-msg {
+    color: #fff;
+    background-color: #ff7518;
+    border-color: #ff7518;
+    font-size: 20px;
+}
+
 .btn-warning {
     color: #fff;
     background-color: #ff7518;
@@ -3165,7 +3172,7 @@ a.btn.disabled,fieldset:disabled a.btn {
     border-color: #3fb618
 }
 
-.btn-outline-success:not(:disabled):not(.disabled):active:focus,.btn-outline-success:not(:disabled):not(.disabled).active:focus,.show>.btn-outline-success.dropdown-toggle:focus {
+.btn-outline-success:not(:disabled):not(.disaerrorbled):active:focus,.btn-outline-success:not(:disabled):not(.disabled).active:focus,.show>.btn-outline-success.dropdown-toggle:focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(63,182,24,0.5);
     box-shadow: 0 0 0 0.2rem rgba(63,182,24,0.5)
 }
