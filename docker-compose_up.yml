@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  app:
+    image: emias_addon_app
+    container_name: emias_addon
+    ports:
+      - 5055:5055
+    restart: unless-stopped
