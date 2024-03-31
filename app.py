@@ -23,10 +23,11 @@ def login():
     else:
         password = None
 
-    session.permanent = True  # Включаем время жизни сессии
+    if request.form.get('remainme'):
+        session.permanent = True  # Включаем время жизни сессии
 
     if 'user_logged' in session:
-        print(session['user_logged'])
+        # print(session['user_logged'])
         return render_template('index.html')
     elif request.form.get('username') == 'addon' and \
             password == '5ed7c8e723fb6c53dd302312792bdeb0':
