@@ -1,7 +1,7 @@
 #### Запуск в docker
 Собираем необходимые образы для запуска:
 ```shell
-sudo docker-compose -f docker-compose_build.yml build
+sudo docker-compose -f docker-compose.yml build
 ```
 Запускаем приложение:
 ```shell

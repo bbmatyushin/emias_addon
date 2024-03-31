@@ -1,3 +1,5 @@
 .idea/
 .venv/
 Dockerfile_dev
+Dockerfile
+docker-compose.yml

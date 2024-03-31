@@ -61,5 +61,11 @@ def index():
         abort(401)
 
 
+@app.errorhandler(404)
+@app.errorhandler(401)
+def page_not_found(error):
+    return render_template('page404.html', user_logged=session.get('user_logged'))
+
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5055)
