@@ -1,9 +1,11 @@
 import hashlib
+import datetime
 from flask import Flask, render_template, url_for, request, redirect, session, abort, flash
 
 
 app = Flask(__name__)
 app.secret_key = 'this_is_secret'
+app.permanent_session_lifetime = datetime.timedelta(days=10)
 
 def get_rows(surname, name, patron, birth, vmeda_id):
     if surname:
@@ -20,6 +22,8 @@ def login():
         password = hashlib.md5(request.form.get('password').encode()).hexdigest()
     else:
         password = None
+
+    session.permanent = True  # Включаем время жизни сессии
 
     if 'user_logged' in session:
         print(session['user_logged'])
