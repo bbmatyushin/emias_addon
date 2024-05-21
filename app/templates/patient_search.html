@@ -1,0 +1,78 @@
+{% extends 'base_v2.html' %}
+
+{% block active_patient %}active{% endblock %}
+
+{% block username %}{{ username }}{% endblock %}
+
+{% block body %}
+<div class="main-panel">
+    <div class="content">
+        <div class="container-fluid">
+            <h4 class="page-title">Поиск пациента</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <form action="" method="post">
+                        <div class="card-header">
+                            <div class="card-title">Поиск по данным пациента</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+
+                                    <label for="surname">Фамилия:</label>
+                                    <input type="text" name="surname" id="surname" class="form-control" placeholder="Введите фамилию пациента"><br>
+                                    <label for="name">Имя:</label>
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Введите имя пациента"><br>
+                                    <label for="patron">Отчество:</label>
+                                    <input type="text" name="patron" id="patron" class="form-control" placeholder="Введите отчество пациента"><br>
+                                    <label for="birth">Дата рождения:</label>
+                                    <input type="date" name="birth" id="birth" class="form-control" placeholder="Укажиет дату рождения "><br>
+
+                            </div>
+                        <div class="card-header">
+                            <div class="card-title">Поиск по ВМедА ID</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <input type="text" name="vmeda_id" id="vmeda_id" class="form-control" placeholder="Поле для ВМедА_ID"><br>
+                            </div>
+                        <input type="submit" class="btn btn-success" value="Найти пациента"><br>
+<!--                            </form>-->
+                        </div>
+                        </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Результат поиска</div>
+                            </div>
+                            <div class="card-body">
+                                {% if surname %}
+                                <form method="post">
+                                    <ul>
+                                        <li><input type="radio" id="choice1" name="choice" value="Value 1">
+                                            <label for="choice1">{{ surname }}</label></li>
+                                        <li><input type="radio" id="choice2" name="choice" value="Value 2">
+                                            <label for="choice2">{{ name }}</label></li>
+                                        <li><input type="radio" id="choice3" name="choice" value="Value 3">
+                                            <label for="choice3">{{ patron }}</label></li>
+                                    </ul>
+                                </form>
+                                {% else %}
+                                    {% if search_flag %}
+                                        <h6>Пациент не найден...</h6>
+                                    {% else %}
+                                        <div class="card-action">
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
